@@ -1,0 +1,25 @@
+{
+  "name": "stit_app",
+  "version": "1.0.0",
+  "description": "application for nyu STIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RiPRR/STIT_APP.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RiPRR/STIT_APP/issues"
+  },
+  "homepage": "https://github.com/RiPRR/STIT_APP#readme",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.4",
+    "passport-local": "^1.0.0"
+  }
+}
