@@ -14,11 +14,11 @@ module.exports = function(passport){
 				}
 				if(!user){
 					console.log(username+" Is not a valid username,please try again")
-					return done(null,false,req.flash("message","user not found"))
+					return done(null,false)
 				}
 				if(!isValidPassword(user,password)){
 					console.log("Invalid password for User: "+username)
-					return done(null,false,req.flash("message","invalid password"))
+					return done(null,false)
 				}
 				console.log("LOGGED IN AS: "+username)
 				return done(null,user)

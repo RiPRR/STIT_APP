@@ -18,8 +18,13 @@
   "homepage": "https://github.com/RiPRR/STIT_APP#readme",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
+    "btoa": "^1.2.1",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.4",
-    "passport-local": "^1.0.0"
+    "http": "0.0.0",
+    "passport-local": "^1.0.0",
+    "request": "^2.88.0",
+    "save": "^2.3.3",
+    "xmlhttprequest": "^1.8.0"
   }
 }

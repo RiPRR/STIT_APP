@@ -11,7 +11,7 @@ const expressSession = require('express-session');
 const User = mongoose.model('User')
 const flash = require('connect-flash');
 const initPassport = require("./passport/init")
-const routes = require("./routes/index")(passport)
+//const routes = require("./routes/index")(passport)
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(expressSession({
@@ -24,6 +24,7 @@ app.use(passport.session())
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(flash());
+const routes = require("./routes/index")(passport)
 app.use("/",routes)
 
 

@@ -15,11 +15,13 @@ module.exports = function(passport){
 				}
 				if(user){
 					console.log("User: "+username+" already exists, please try again")
-					return done(null,false,req.flash("message","user already exists"))
+					return done(null,false)
 				}
 				else{
 					const hashedpassword = hash(password)
-					const newUser = new User({username:username,password:hashedpassword});
+					const genre = (req.body["genreId"])
+					const className = (req.body["classificationName"])
+					const newUser = new User({username:username,password:hashedpassword,genre:genre,className:className});
 					newUser.save(function(err){
 						if(err){
 							console.log("Error saving new user")
@@ -27,17 +29,19 @@ module.exports = function(passport){
 							throw err
 						}
 						else{
-							console.log("REGISTERED "+username+" AS NEW USER")
+							console.log("REGISTERED NEW USER "+username)
 							return done(null,newUser)
 						}
 					})					
 				}
 			})
 		}
+		//delay execution to maintain consistancy
 		process.nextTick(createUser);
 	})
 	)
 
+	//Password hashing function using node bcrypt, takes passsword and puts it through 10(suggested) rounds of encryption 
 	const hash = function(password){
 		return bCrypt.hashSync(password, bCrypt.genSaltSync(10), null);
 	}
