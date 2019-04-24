@@ -1,7 +1,7 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 const db = require('../db')
 const User = mongoose.model('User')
-const bCrypt = require('bcrypt-nodejs');
+const bCrypt = require('bcrypt-nodejs')
 const LocalStrategy   = require('passport-local').Strategy;
 const sanitize = require("mongo-sanitize")
 
@@ -35,6 +35,6 @@ module.exports = function(passport){
 	))
 	//make sure the password is correct
 	const isValidPassword = function(user, password){
-		return bCrypt.compareSync(password, user.password);
+		return bCrypt.compareSync(password, user.password)
 	}
 }

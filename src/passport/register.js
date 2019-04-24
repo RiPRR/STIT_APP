@@ -1,7 +1,7 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 const db = require('../db')
 const User = mongoose.model('User')
-const bCrypt = require('bcrypt-nodejs');
+const bCrypt = require('bcrypt-nodejs')
 const LocalStrategy   = require('passport-local').Strategy;
 const valid = require("../validation/values.js")
 const sanitize = require("mongo-sanitize")
@@ -53,13 +53,13 @@ module.exports = function(passport){
 			})
 		}
 		//delay execution to maintain consistancy
-		process.nextTick(createUser);
+		process.nextTick(createUser)
 	})
 	)
 
 	//Password hashing function using node bcrypt, takes passsword and puts it through 
 	//10(suggested) rounds of encryption 
 	const hash = function(password){
-		return bCrypt.hashSync(password, bCrypt.genSaltSync(10), null);
+		return bCrypt.hashSync(password, bCrypt.genSaltSync(10), null)
 	}
 }

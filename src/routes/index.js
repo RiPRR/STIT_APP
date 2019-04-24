@@ -1,6 +1,6 @@
 const express =require("express")
 const router = express.Router()
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 const db = require('../db')
 const User = mongoose.model('User')
 const valid = require("../validation/values.js")
@@ -17,10 +17,10 @@ const isAuthenticated = function(req,res,next){
 module.exports = function(passport){
 	//Mainly used for dev purposes, sends back profile information when requested
 	//Obviously would not be present in a real application but useful for verifying
-	//changes
+	//changes to a user
 	router.get("/",isAuthenticated,(req,res)=>{
 		res.send(req.user)
-	});
+	})
 
 	//Redirected to when an action fails, sends back an Error message to client 
 	router.get("/failure",(req,res)=>{
@@ -28,7 +28,7 @@ module.exports = function(passport){
 		error = {"Message":"something went wrong"}
 		JSON.stringify(error)
 		res.send(error)
-	});
+	})
 
 	//registration route that employs the Passport Registration strategy (register.js)
 	router.post("/register",passport.authenticate("register",{failureRedirect:"/failure",}),
@@ -65,7 +65,7 @@ module.exports = function(passport){
 			console.log("successful request from: "+req.user.username)
 			res.send(json)
 		})
-	});
+	})
 
 	//Route to update user prefrences 
 	router.post("/setPrefrences",isAuthenticated,(req,res)=>{
@@ -89,7 +89,7 @@ module.exports = function(passport){
 				res.redirect("/")
 			})
 		}
-	});
+	})
 
 	return router
 

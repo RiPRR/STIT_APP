@@ -4,7 +4,8 @@
   "description": "application for nyu STIT",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js"
   },
   "repository": {
     "type": "git",
@@ -18,13 +19,18 @@
   "homepage": "https://github.com/RiPRR/STIT_APP#readme",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
-    "btoa": "^1.2.1",
-    "connect-flash": "^0.1.1",
+    "body-parser": "^1.18.3",
     "cookie-parser": "^1.4.4",
+    "express": "^4.16.4",
+    "express-session": "^1.16.1",
     "http": "0.0.0",
+    "mongo-sanitize": "^1.0.1",
+    "mongoose": "^5.5.3",
+    "npm-check-updates": "^3.1.8",
+    "passport": "^0.4.0",
     "passport-local": "^1.0.0",
+    "path": "^0.12.7",
     "request": "^2.88.0",
-    "save": "^2.3.3",
-    "xmlhttprequest": "^1.8.0"
+    "save": "^2.3.3"
   }
 }
